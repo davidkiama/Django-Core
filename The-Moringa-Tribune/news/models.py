@@ -12,6 +12,9 @@ class Editor(models.Model):
     def __str__(self):
         return self.first_name
 
+    def save_editor(self):
+        self.save()
+
 
 class Tags(models.Model):
     name = models.CharField(max_length=30)
@@ -23,6 +26,6 @@ class Tags(models.Model):
 class Article(models.Model):
     title = models.CharField(max_length=60)
     post = models.TextField()
-    editor = models.ForeignKey(Editor)
+    editor = models.ForeignKey(Editor, on_delete=models.CASCADE)
     tags = models.ManyToManyField(Tags)
     pub_field = models.DateTimeField(auto_now=True)
