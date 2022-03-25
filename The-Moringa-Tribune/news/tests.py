@@ -16,6 +16,7 @@ class EditorTestClass(TestCase):
     def test_save(self):
         self.kiama.save_editor()
         editors = Editor.objects.all()
+
         self.assertTrue(len(editors) > 0)
 
      # Creating a new tag and saving it
@@ -23,7 +24,7 @@ class EditorTestClass(TestCase):
         self.new_tag.save()
 
         self.new_article = Article(
-            title='Test Article', post='This is a random test Post', editor=self.james)
+            title='Test Article', post='This is a random test Post', editor=self.kiama)
         self.new_article.save()
 
         self.new_article.tags.add(self.new_tag)

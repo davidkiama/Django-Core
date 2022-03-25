@@ -1,7 +1,7 @@
 virtual/
 db.sqlite3
-news/__pycache__/
-tribune/__pycache__/
+news/__pycache__
+tribune/__pycache__
 migrations/
 
 .pyc
